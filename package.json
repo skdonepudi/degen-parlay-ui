@@ -10,10 +10,21 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@tailwindcss/forms": "^0.5.3",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "flatpickr": "^4.6.13",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.8.1",
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "tailwindcss-pseudo-elements": "^2.0.0"
   }
 }
