@@ -53,6 +53,7 @@ export default function BettingCard({ bet }) {
                 src="https://ssl.gstatic.com/onebox/media/sports/logos/paYnEE8hcrP96neHRNofhQ_96x96.png"
                 width={40}
                 height={40}
+                alt="Barcelona"
               />
               <p className="text-sm leading-6 font-semibold text-gray-900">
                 Barcelona
@@ -76,6 +77,7 @@ export default function BettingCard({ bet }) {
                 src="https://ssl.gstatic.com/onebox/media/sports/logos/fhBITrIlbQxhVB6IjxUO6Q_96x96.png"
                 width={40}
                 height={40}
+                alt="Chelsea"
               />
               <p className="text-sm leading-6 font-bold text-gray-900">
                 Chelsea

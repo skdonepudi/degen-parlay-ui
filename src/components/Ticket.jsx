@@ -4,7 +4,7 @@ export default function Ticket(props) {
   const [checked, setChecked] = useState(false);
   return (
     <div className="flex flex-col">
-      <div className="bg-white relative drop-shadow-2xl  rounded-3xl p-4 m-4">
+      <div className="bg-white relative drop-shadow-2xl  rounded-3xl p-4 m-2">
         <div className="flex-auto justify-evenly">
           <div className="flex items-center justify-a">
             <div className="ml-auto font-semibold ml-4 text-lg">
@@ -82,7 +82,7 @@ export default function Ticket(props) {
             </div>
             <div className="bg-gray-200 ml-2 w-30 rounded">
               <input
-                className="text-sm tracking-widest w-24 p-2 border-2 rounded border-gray-300 text-gray-500 placeholder-gray-400"
+                className="text-sm tracking-widest w-16 p-2 border-2 rounded border-gray-300 text-gray-500 placeholder-gray-400"
                 placeholder="20$"
               />
             </div>
@@ -98,11 +98,15 @@ export default function Ticket(props) {
 
           <div className="flex items-center px-5 pt-2">
             <input type="checkbox" className="form-checkbox rounded" />
-            <p className="text-gray-500 ml-2">Accept rules of the agreement</p>
+            <p className="text-gray-500 text-sm ml-2">
+              Accept rules of the agreement
+            </p>
           </div>
           <div className="flex items-center px-5 pt-2 ">
             <input type="checkbox" className="form-checkbox rounded" />
-            <p className="text-gray-500 ml-2">Accept any odds changes</p>
+            <p className="text-gray-500 ml-2 text-sm">
+              Accept any odds changes
+            </p>
           </div>
           <div className="flex justify-start items-center px-5 pt-2 pb-2">
             <div className=" pt-2 pb-5">
@@ -114,16 +118,16 @@ export default function Ticket(props) {
             {/* VERTICAL LINE */}
             <div className="border-l border-gray-300 h-10 mx-5"></div>
             {/* VERTICAL LINE */}
-            <div className=" px-5 pt-2 pb-5">
+            <div className=" px-5 pt-2 ">
               <p className="text-gray-700 text-xs font-bold">
                 Possible Winnings
               </p>
-              <span className="text-green-500 text-2xl font-normal">
+              <span className="text-green-500 text-xl font-normal">
                 735, 38$
               </span>
             </div>
           </div>
-          <div className="border-b border-dashed border-b-2 my-5 ">
+          <div className="border-b border-dashed my-5 ">
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -left-2"></div>
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -right-2"></div>
           </div>

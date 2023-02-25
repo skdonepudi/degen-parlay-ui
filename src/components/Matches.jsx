@@ -94,7 +94,7 @@ export default function Matches() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full ">
       <div className="flex justify-between items-center">
         <h3 className="text-lg leading-6 font-bold text-gray-900">Matches</h3>
         <div className="flex items-center">
@@ -182,7 +182,7 @@ export default function Matches() {
                     <td className="p-4">
                       {/* Team logo */}
                       <div className="flex items-center">
-                        <span className="text-xs">{match.homeTeam}</span>
+                        <span className="text-xs w-auto">{match.homeTeam}</span>
                         <div className="w-8 h-8 mx-2">
                           <Image
                             src={match.homeTeamLogo}
@@ -191,7 +191,9 @@ export default function Matches() {
                             alt="team logo"
                           />
                         </div>
-                        {match.score}
+                        <div className="flex w-10 items-center">
+                          <span className="text-xs">{match.score}</span>
+                        </div>
                         <div className="w-8 h-8 mx-2">
                           <Image
                             src={match.awayTeamLogo}

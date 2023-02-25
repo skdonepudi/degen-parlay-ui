@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WelcomeBanner() {
   return (
-    <div className="relative bg-indigo-200 p-4 sm:p-6 rounded-md overflow-hidden mb-8  w-full">
+    <div className="relative bg-indigo-200 p-4 sm:p-6 rounded-md overflow-hidden mb-8  w-auto">
       {/* Background illustration */}
       <div
         className="absolute right-0 top-0 mt-3 mr-1 pointer-events-none hidden xl:block blur-sm"

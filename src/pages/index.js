@@ -14,25 +14,23 @@ import Ticket from "@/components/Ticket";
 function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [bettingTabOpen, setBettingTabOpen] = useState(true);
-  const handleSetbettingTab = () => {
-    setBettingTabOpen(!bettingTabOpen);
-  };
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen justify-between">
       {/* Sidebar */}
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
       {/* Content area */}
-      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden bg-white">
+      <div className="relative flex flex-col  flex-1 overflow-y-auto overflow-x-hidden bg-white">
         {/*  Site header */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         <main>
-          <div className="  w-auto max-w-9xl mx-auto flex">
+          <div className="w-auto lg:flex max-w-full">
             {/* Dashboard actions */}
-            <div className="flex flex-col items-start px-4 sm:px-6 lg:px-8 justify-between py-8">
+            <div className="flex flex-col items-start px-4 sm:px-4 lg:px-4 justify-start py-6">
               {/* Left: Betting Card */}
+
               <BettingCard
                 bet={{
                   title: "UEFA Champions League",
@@ -43,21 +41,19 @@ function Dashboard() {
               {/* Football leagues */}
               <FootballLeagues />
             </div>
-            <div className="flex flex-col ml-4 w-auto py-8 ">
+            <div className="flex flex-col  min-w-44 max-w-full py-6  px-4">
               <WelcomeBanner />
               <Matches />
             </div>
-            <div className="flex flex-col w-fit  bg-slate-100 fixed  z-40 right-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-auto overflow-y-scroll lg:overflow-y-auto no-scrollbar shrink-0  p-4 transition-all duration-200 ease-in-out border-r border-slate-200 ">
-              {/* Right: Top title */}
+            <div className="flex flex-col w-auto bg-slate-100 static  z-10 right-0 top-0 lg:top-auto h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar shrink p-1 transition-all duration-200 ease-in-out border-r border-slate-200 ">
               <div className="flex justify-between items-center mx-5 py-3 ">
                 <p className="text-lg font-semibold text-slate-500">
                   Invoice for Payment
                 </p>
-                <p className="text-2xl font-bold text-gray-500">
+                <button className="text-2xl font-bold text-gray-500 hover:text-gray-600 rounded-full hover:bg-white p-2  transition duration-300">
                   <MdClear />
-                </p>
+                </button>
               </div>
-              {/* Right: Betting Invoice */}
               <div>
                 <Ticket />
               </div>
