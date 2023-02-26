@@ -3,29 +3,15 @@ import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { MdVideocam, MdStar } from "react-icons/md";
-export default function BettingCard({ bet }) {
+export default function BettingCard({
+  bettingTabOpen = { bettingTabOpen },
+  setBettingTabOpen = { setBettingTabOpen },
+  bet,
+}) {
   const { title, description } = bet;
-
-  const storedBettingTabExpanded = true;
-  const [bettingTabExpanded, setBettingTabExpanded] = useState(
-    storedBettingTabExpanded === null
-      ? false
-      : storedBettingTabExpanded === true
-  );
-
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-  useEffect(() => {
-    localStorage.setItem("betting-expanded", bettingTabExpanded);
-    if (bettingTabExpanded) {
-      document.querySelector("body").classList.add("betting-expanded");
-    } else {
-      document.querySelector("body").classList.remove("betting-expanded");
-    }
-  }, [bettingTabExpanded]);
+  function toggle() {
+    setBettingTabOpen(true);
+  }
 
   return (
     <div className="rounded border ">
@@ -90,7 +76,7 @@ export default function BettingCard({ bet }) {
               <MdStar className="w-5 h-5" />
             </button>
             <button
-              onClick={toggleSidebar}
+              onClick={toggle}
               aria-controls="sidebar"
               className="bg-indigo-600 text-sm font-semibold text-gray-100 ml-4 px-6 py-2 rounded hover:-translate-y-1 transition duration-200"
             >

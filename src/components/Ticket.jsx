@@ -7,7 +7,7 @@ export default function Ticket(props) {
       <div className="bg-white relative drop-shadow-2xl  rounded-3xl p-4 m-2">
         <div className="flex-auto justify-evenly">
           <div className="flex items-center justify-a">
-            <div className="ml-auto font-semibold ml-4 text-lg">
+            <div className="ml-auto font-semibold  text-lg">
               <h2
                 className={`${
                   checked
@@ -19,14 +19,14 @@ export default function Ticket(props) {
               </h2>
             </div>
             <div className="flex items-center  ml-auto">
-              <label class="relative inline-flex items-center cursor-pointer">
+              <label className="relative inline-flex items-center cursor-pointer">
                 <input
                   type="checkbox"
                   onChange={() => setChecked(!checked)}
                   value=""
-                  class="sr-only peer"
+                  className="sr-only peer"
                 />
-                <div class="w-12 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 ring-2 ring-gray-300 peer-focus:ring-indigo-300  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-indigo-600 after:border-indigo-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 dark:border-gray-600 peer-checked:bg-slate-100"></div>
+                <div className="w-12 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 ring-2 ring-gray-300 peer-focus:ring-indigo-300  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-indigo-600 after:border-indigo-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 dark:border-gray-600 peer-checked:bg-slate-100"></div>
               </label>
             </div>
             <div className="ml-auto font-semibold mr-4 text-lg ">
@@ -45,7 +45,7 @@ export default function Ticket(props) {
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -left-2"></div>
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -right-2"></div>
           </div>
-          <div className="flex items-center p-5 text-sm">
+          <div className="flex items-center px-5 py-3 text-sm">
             <div className="flex flex-col">
               <span className="text-sm">
                 <span className="font-bold text-black">Barcelona</span> vs{" "}
@@ -53,18 +53,41 @@ export default function Ticket(props) {
               </span>
             </div>
             <div className="flex flex-col ml-auto">
-              <span className="text-sm bg-gray-400 p-0.5 rounded-full">
+              <button className="text-sm bg-gray-400 p-0.5 rounded-full">
                 <MdClear className="text-white" />
-              </span>
+              </button>
             </div>
           </div>
+          {checked && (
+            <div className="flex items-center px-5 text-sm">
+              <div className="flex flex-col">
+                <span className="text-sm">
+                  <span className="font-bold text-black">Everton</span> vs{" "}
+                  <span className="font-bold text-black">Villarreal</span>
+                </span>
+              </div>
+              <div className="flex flex-col ml-auto">
+                <button className="text-sm bg-gray-400 p-0.5 rounded-full">
+                  <MdClear className="text-white" />
+                </button>
+              </div>
+            </div>
+          )}
           <div>
-            <p className="text-xs m-auto mx-5 mb-2 text-gray-400">Winner</p>
+            <p className="text-xs m-auto mx-5 mb-2 mt-4 text-gray-400">
+              Winner
+            </p>
           </div>
           <div className="flex justify-between items-center  bg-indigo-100 mx-5 p-2 rounded text-indigo-600 text-sm">
             <p className="">Barcelona</p>
             <p className="bg-indigo-600 px-2 py-1 text-white rounded">1.56</p>
           </div>
+          {checked && (
+            <div className="flex justify-between items-center mt-2 bg-indigo-100 mx-5 p-2 rounded text-indigo-600 text-sm">
+              <p className="">Villarreal</p>
+              <p className="bg-indigo-600 px-2 py-1 text-white rounded">1.21</p>
+            </div>
+          )}
 
           <div className="border-b border-dashed border-b-2 my-3 pt-5">
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -left-2"></div>
@@ -112,7 +135,7 @@ export default function Ticket(props) {
             <div className=" pt-2 pb-5">
               <p className="text-gray-700 text-sm font-bold pb-1">Total Rate</p>
               <span className="font-bold text-white bg-indigo-700 px-2.5 py-1.5  text-sm rounded">
-                1.56
+                2.72
               </span>
             </div>
             {/* VERTICAL LINE */}

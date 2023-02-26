@@ -94,7 +94,7 @@ export default function Matches() {
   ];
 
   return (
-    <div className="flex flex-col w-full ">
+    <div className="flex flex-col w-full transition-all duration-300">
       <div className="flex justify-between items-center">
         <h3 className="text-lg leading-6 font-bold text-gray-900">Matches</h3>
         <div className="flex items-center">
