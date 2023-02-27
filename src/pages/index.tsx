@@ -1,29 +1,32 @@
 import React, { useState } from "react";
 
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
 import BettingCard from "@/components/BettingCard";
 import FootballLeagues from "@/components/FootballLeagues";
 import Matches from "@/components/Matches";
 import WelcomeBanner from "@/components/WelcomeBanner";
-import { MdCheck, MdClear } from "react-icons/md";
+import { MdClear } from "react-icons/md";
 import Ticket from "@/components/Ticket";
 import { useEffect } from "react";
 
 function Dashboard() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [bettingTabOpen, setBettingTabOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+const [bettingTabOpen, setBettingTabOpen] = useState<boolean>(false);
   function toggle() {
     setBettingTabOpen(false);
   }
 
   useEffect(() => {
-    if (bettingTabOpen) {
-      document.querySelector("body").classList.add("bettingtab-expanded");
-    } else {
-      document.querySelector("body").classList.remove("bettingtab-expanded");
+    const body = document.querySelector("body");
+    if (body) {
+      if (bettingTabOpen) {
+        body.classList.add("bettingtab-expanded");
+      } else {
+        body.classList.remove("bettingtab-expanded");
+      }
     }
-  }, [bettingTabOpen]);
+  }, [bettingTabOpen]);    
 
   return (
     <div className="flex h-screen justify-between">
@@ -42,7 +45,6 @@ function Dashboard() {
               {/* Left: Betting Card */}
 
               <BettingCard
-                bettingTabOpen={bettingTabOpen}
                 setBettingTabOpen={setBettingTabOpen}
                 bet={{
                   title: "UEFA Champions League",
@@ -67,10 +69,6 @@ function Dashboard() {
                   ? "translate-x-0 "
                   : "translate-x-full opacity-0 w-0 overflow-hidden hidden lg:block"
               }`}
-
-              // className={`flex flex-col  z-10 min-w-fit right-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-56 lg:w-20 lg:sidebar-expanded:!w-56 2xl:!w-56 shrink-0 bg-white p-4 transition-all duration-200 ease-in-out border-r border-slate-200 ${
-              //   bettingTabOpen ? "translate-x-0" : "translate-x-full"
-              // }`}
             >
               <div className="flex justify-between items-center mx-5 py-3 ">
                 <p className="text-lg font-semibold text-slate-500">

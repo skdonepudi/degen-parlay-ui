@@ -1,7 +1,7 @@
 import { MdClear, MdInfo } from "react-icons/md";
-import React, { useState } from "react";
-export default function Ticket(props) {
-  const [checked, setChecked] = useState(false);
+import  { useState } from "react";
+export default function Ticket() {
+  const [checked, setChecked] = useState<boolean>(false);
   return (
     <div className="flex flex-col">
       <div className="bg-white relative drop-shadow-2xl  rounded-3xl p-4 m-2">
@@ -26,7 +26,7 @@ export default function Ticket(props) {
                   value=""
                   className="sr-only peer"
                 />
-                <div className="w-12 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 ring-2 ring-gray-300 peer-focus:ring-indigo-300  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-indigo-600 after:border-indigo-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 dark:border-gray-600 peer-checked:bg-slate-100"></div>
+                <div className="w-12 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 ring-2 ring-gray-300 peer-focus:ring-indigo-300  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-indigo-600  after:border after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-300 dark:border-gray-600 peer-checked:bg-slate-100"></div>
               </label>
             </div>
             <div className="ml-auto font-semibold mr-4 text-lg ">
@@ -41,7 +41,7 @@ export default function Ticket(props) {
               </h2>
             </div>
           </div>
-          <div className="border-b border-dashed border-b-2 my-5 ">
+          <div className="border-b border-dashed my-5 ">
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -left-2"></div>
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -right-2"></div>
           </div>
@@ -53,7 +53,7 @@ export default function Ticket(props) {
               </span>
             </div>
             <div className="flex flex-col ml-auto">
-              <button className="text-sm bg-gray-400 p-0.5 rounded-full">
+              <button className="text-sm bg-gray-400 p-0.5 rounded-full" title="Close"> 
                 <MdClear className="text-white" />
               </button>
             </div>
@@ -89,7 +89,7 @@ export default function Ticket(props) {
             </div>
           )}
 
-          <div className="border-b border-dashed border-b-2 my-3 pt-5">
+          <div className="border-b border-dashed  my-3 pt-5">
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -left-2"></div>
             <div className="absolute rounded-full w-5 h-5 bg-slate-200 -mt-2 -right-2"></div>
           </div>

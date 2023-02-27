@@ -1,13 +1,8 @@
 import React from "react";
-
 export default function WelcomeBanner() {
   return (
     <div className="relative bg-indigo-200 p-4 sm:p-6 rounded-md overflow-hidden mb-8  w-full transition-all duration-300 ease-in-out">
-      {/* Background illustration */}
-      <div
-        className="absolute right-0 top-0 mt-3 mr-1 pointer-events-none hidden xl:block blur-sm"
-        aria-hidden="true"
-      >
+      <div className="absolute right-0 top-0 mt-3 mr-1 pointer-events-none hidden xl:block blur-sm" aria-hidden="true">
         <svg width="319" height="198" xmlnsXlink="http://www.w3.org/1999/xlink">
           <defs>
             <path id="welcome-a" d="M64 0l64 128-64-20-64 20z" />
@@ -17,13 +12,7 @@ export default function WelcomeBanner() {
               <stop stopColor="#A5B4FC" offset="0%" />
               <stop stopColor="#818CF8" offset="100%" />
             </linearGradient>
-            <linearGradient
-              x1="50%"
-              y1="24.537%"
-              x2="50%"
-              y2="100%"
-              id="welcome-c"
-            >
+            <linearGradient x1="50%" y1="24.537%" x2="50%" y2="100%" id="welcome-c">
               <stop stopColor="#4338CA" offset="0%" />
               <stop stopColor="#6366F1" stopOpacity="0" offset="100%" />
             </linearGradient>
@@ -34,50 +23,30 @@ export default function WelcomeBanner() {
                 <use xlinkHref="#welcome-a" />
               </mask>
               <use fill="url(#welcome-b)" xlinkHref="#welcome-a" />
-              <path
-                fill="url(#welcome-c)"
-                mask="url(#welcome-d)"
-                d="M64-24h80v152H64z"
-              />
+              <path fill="url(#welcome-c)" mask="url(#welcome-d)" d="M64-24h80v152H64z" />
             </g>
             <g transform="rotate(-51 91.324 -105.372)">
               <mask id="welcome-f" fill="#fff">
                 <use xlinkHref="#welcome-e" />
               </mask>
               <use fill="url(#welcome-b)" xlinkHref="#welcome-e" />
-              <path
-                fill="url(#welcome-c)"
-                mask="url(#welcome-f)"
-                d="M40.333-15.147h50v95h-50z"
-              />
+              <path fill="url(#welcome-c)" mask="url(#welcome-f)" d="M40.333-15.147h50v95h-50z" />
             </g>
             <g transform="rotate(44 61.546 392.623)">
               <mask id="welcome-h" fill="#fff">
                 <use xlinkHref="#welcome-g" />
               </mask>
               <use fill="url(#welcome-b)" xlinkHref="#welcome-g" />
-              <path
-                fill="url(#welcome-c)"
-                mask="url(#welcome-h)"
-                d="M40.333-15.147h50v95h-50z"
-              />
+              <path fill="url(#welcome-c)" mask="url(#welcome-h)" d="M40.333-15.147h50v95h-50z" />
             </g>
           </g>
         </svg>
       </div>
 
-      {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">
-          Good Morning, Test User 👋
-        </h1>
-        <p>
-          Predict the first goal of two different teams in two selected matches
-          and win up to $100 000.
-        </p>
-        <button className="bg-indigo-700 text-white px-4 py-2 rounded-md mt-6">
-          More details
-        </button>
+        <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">Good Morning, Test User 👋</h1>
+        <p>Predict the first goal of two different teams in two selected matches and win up to $100 000.</p>
+        <button className="bg-indigo-700 text-white px-4 py-2 rounded-md mt-6">More details</button>
       </div>
     </div>
   );

@@ -3,35 +3,37 @@ import Link from "next/link";
 import Transition from "../../utils/Transition";
 
 function Help() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
-  const trigger = useRef(null);
-  const dropdown = useRef(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const dropdown = useRef<HTMLDivElement>(null);
 
   // close on click outside
-  useEffect(() => {
-    const clickHandler = ({ target }) => {
-      if (
-        !dropdownOpen ||
-        dropdown.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return;
-      setDropdownOpen(false);
-    };
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
-  });
+// close on click outside
+useEffect(() => {
+  const clickHandler = (event: MouseEvent) => {
+    if (
+      !dropdownOpen ||
+      dropdown.current?.contains(event.target as Node) ||
+      trigger.current?.contains(event.target as Node)
+    )
+      return;
+    setDropdownOpen(false);
+  };
+  document.addEventListener("click", clickHandler, { capture: true, passive: true });
+  return () => document.removeEventListener("click", clickHandler);
+});
 
   // close if the esc key is pressed
   useEffect(() => {
-    const keyHandler = ({ keyCode }) => {
+    const keyHandler = ({ keyCode }: KeyboardEvent) => {
       if (!dropdownOpen || keyCode !== 27) return;
       setDropdownOpen(false);
     };
     document.addEventListener("keydown", keyHandler);
     return () => document.removeEventListener("keydown", keyHandler);
-  });
+  }, [dropdownOpen]);
+
 
   return (
     <div className="relative inline-flex ml-3">
@@ -65,8 +67,7 @@ function Help() {
         enterEnd="opacity-100 translate-y-0"
         leave="transition ease-out duration-200"
         leaveStart="opacity-100"
-        leaveEnd="opacity-0"
-      >
+        leaveEnd="opacity-0" appear={undefined}      >
         <div
           ref={dropdown}
           onFocus={() => setDropdownOpen(true)}
@@ -80,7 +81,6 @@ function Help() {
               <Link
                 href=""
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <svg
@@ -97,7 +97,7 @@ function Help() {
               <Link
                 href=""
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="#0"
+                
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <svg
@@ -113,7 +113,7 @@ function Help() {
               <Link
                 href=""
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="#0"
+                
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <svg

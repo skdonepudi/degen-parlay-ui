@@ -3,48 +3,36 @@ import SearchModal from "./header/SearchModal";
 import Notifications from "./header/Notifications";
 import Help from "./header/Help";
 import UserMenu from "./header/UserMenu";
+type HeaderProps = {
+  sidebarOpen: boolean;
+  setSidebarOpen: (value: boolean) => void;
+};
 
-function Header({ sidebarOpen, setSidebarOpen }) {
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
-
+function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) 
+{  const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
   return (
     <header className="sticky top-0 bg-white border-b border-gray-200 z-30">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 -mb-px">
-          {/* Header: Left side */}
           <div className="flex">
-            {/*Header menu with top hover effect */}
             <div className="flex-shrink-0 flex items-center">
-              <p className="hidden lg:block text-lg mr-8 p-4 text-indigo-600 font-semibold border-t-3 border-indigo-600">
-                Matches
-              </p>
-              <p className="hidden lg:block text-lg mr-10 text-gray-400 font-semibold">
-                Live Score
-              </p>
-              <p className="hidden lg:block text-lg mr-10 text-gray-400 font-semibold">
-                Statistics
-              </p>
-              <p className="hidden lg:block text-lg mr-10 text-gray-400 font-semibold">
-                Teams
-              </p>
+              <p className="hidden lg:block text-lg mr-8 p-4 text-indigo-600 font-semibold border-t-3 border-indigo-600">Matches</p>
+              <p className="hidden lg:block text-lg mr-10 text-gray-400 font-semibold">Live Score</p>
+              <p className="hidden lg:block text-lg mr-10 text-gray-400 font-semibold">Statistics</p>
+              <p className="hidden lg:block text-lg mr-10 text-gray-400 font-semibold">Teams</p>
             </div>
 
-            {/* Hamburger button */}
             <button
               className="text-slate-500 hover:text-slate-600 lg:hidden"
               aria-controls="sidebar"
               aria-expanded={sidebarOpen}
-              onClick={(e) => {
+              onClick={e => {
                 e.stopPropagation();
                 setSidebarOpen(!sidebarOpen);
               }}
             >
               <span className="sr-only">Open sidebar</span>
-              <svg
-                className="w-6 h-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect x="4" y="5" width="16" height="2" />
                 <rect x="4" y="11" width="16" height="2" />
                 <rect x="4" y="17" width="16" height="2" />
@@ -52,24 +40,18 @@ function Header({ sidebarOpen, setSidebarOpen }) {
             </button>
           </div>
 
-          {/* Header: Right side */}
           <div className="flex items-center">
             <button
-              className={`w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 transition duration-150 rounded-full ml-3 ${
-                searchModalOpen && "bg-slate-200"
-              }`}
-              onClick={(e) => {
+              className={`w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 transition duration-150 rounded-full ml-3 ${searchModalOpen &&
+                "bg-slate-200"}`}
+              onClick={e => {
                 e.stopPropagation();
                 setSearchModalOpen(true);
               }}
               aria-controls="search-modal"
             >
               <span className="sr-only">Search</span>
-              <svg
-                className="w-4 h-4"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg className="w-4 h-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                 <path
                   className="fill-current text-slate-500"
                   d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"
@@ -80,15 +62,10 @@ function Header({ sidebarOpen, setSidebarOpen }) {
                 />
               </svg>
             </button>
-            <SearchModal
-              id="search-modal"
-              searchId="search"
-              modalOpen={searchModalOpen}
-              setModalOpen={setSearchModalOpen}
-            />
+            <SearchModal id="search-modal" searchId="search" modalOpen={searchModalOpen} setModalOpen={setSearchModalOpen} />
             <Notifications />
             <Help />
-            {/*  Divider */}
+
             <hr className="w-px h-6 bg-slate-200 mx-3" />
             <UserMenu />
           </div>
@@ -97,5 +74,4 @@ function Header({ sidebarOpen, setSidebarOpen }) {
     </header>
   );
 }
-
 export default Header;
