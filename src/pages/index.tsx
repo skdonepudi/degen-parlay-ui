@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
-const [bettingTabOpen, setBettingTabOpen] = useState<boolean>(false);
+  const [bettingTabOpen, setBettingTabOpen] = useState<boolean>(false);
   function toggle() {
     setBettingTabOpen(false);
   }
@@ -26,7 +26,7 @@ const [bettingTabOpen, setBettingTabOpen] = useState<boolean>(false);
         body.classList.remove("bettingtab-expanded");
       }
     }
-  }, [bettingTabOpen]);    
+  }, [bettingTabOpen]);
 
   return (
     <div className="flex h-screen justify-between">
@@ -64,13 +64,13 @@ const [bettingTabOpen, setBettingTabOpen] = useState<boolean>(false);
             {/* Betting Tab width auto */}
 
             <div
-              className={`flex flex-col bg-slate-100 fixed lg:static z-50 right-0 top-0 lg:top-auto h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar shrink-0 p-1 transition-all duration-300 ease-in-out border-r border-slate-200 ${
+              className={`flex flex-col bg-slate-100 fixed lg:static right-0 top-0 lg:top-auto h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar shrink-0 p-1 transition-all duration-300 ease-in-out border-r border-slate-200  ${
                 bettingTabOpen
                   ? "translate-x-0 "
                   : "translate-x-full opacity-0 w-0 overflow-hidden hidden lg:block"
               }`}
             >
-              <div className="flex justify-between items-center mx-5 py-3 ">
+              <div className="flex justify-between items-center mx-5 py-3">
                 <p className="text-lg font-semibold text-slate-500">
                   Invoice for Payment
                 </p>
